@@ -125,7 +125,12 @@ export class AuthenticationService {
         throw new Error('Refresh token is invalid');
       }
 
-      return this.generateTokens(user);
+      const tokens = await this.generateTokens(user);
+      return {
+        name: user.name,
+        email: user.email,
+        ...tokens,
+      };
     } catch (err) {
       if (err instanceof InvalidatedRefreshTokenError) {
         throw new UnauthorizedException('Access denied');

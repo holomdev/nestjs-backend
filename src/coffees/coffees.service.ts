@@ -9,18 +9,18 @@ export class CoffeesService {
   }
 
   findAll() {
-    return `This action returns all coffees`;
+    return { coffees: `This action returns all coffees` };
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} coffee`;
+    return { coffees: `This action returns a #${id} coffee` };
   }
 
   update(id: number, updateCoffeeDto: UpdateCoffeeDto) {
-    return `This action updates a #${id} coffee`;
+    return { coffees: `This action updates a #${id} coffee` };
   }
 
   remove(id: number) {
-    return `This action removes a #${id} coffee`;
+    return { coffees: `This action removes a #${id} coffee` };
   }
 }
